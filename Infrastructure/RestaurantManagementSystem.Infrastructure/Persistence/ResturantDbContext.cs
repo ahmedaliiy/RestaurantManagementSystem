@@ -24,6 +24,9 @@ namespace RestaurantManagementSystem.Infrastructure.Persistence
                 {
                     case EntityState.Added:
                         entity.Entity.CreatedDate = DateTime.Now;
+                        entity.Entity.CreatedBy = "Test User";
+                        entity.Entity.LastModifiedDate = DateTime.Now;
+                        entity.Entity.LastModifiedBy = "Test User";
                         break;
                     case EntityState.Modified:
                         entity.Entity.LastModifiedDate = DateTime.Now;

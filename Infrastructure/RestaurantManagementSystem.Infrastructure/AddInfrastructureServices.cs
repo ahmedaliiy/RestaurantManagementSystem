@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RestaurantManagementSystem.Application.Contracts.Infrastructure;
+using RestaurantManagementSystem.Application.Persistence;
 using RestaurantManagementSystem.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RestaurantManagementSystem.Infrastructure.Repositories;
+using RestaurantManagementSystem.Infrastructure.Services;
 
 namespace RestaurantManagementSystem.Infrastructure
 {
@@ -16,6 +16,12 @@ namespace RestaurantManagementSystem.Infrastructure
         {
             services.AddDbContext<ResturantDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("ResturantManagementSystem")));
+
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
+
+            services.AddScoped<IResturantRepository, ResturantRepository>();
+            
+            services.AddScoped<IResturantService, ResturantService>();
 
             return services;
         }
