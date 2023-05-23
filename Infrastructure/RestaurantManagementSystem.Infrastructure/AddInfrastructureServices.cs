@@ -20,8 +20,10 @@ namespace RestaurantManagementSystem.Infrastructure
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
 
             services.AddScoped<IResturantRepository, ResturantRepository>();
+            services.AddScoped<IInventoryItemRepository, InventoryItemRepository>();
             
             services.AddScoped<IResturantService, ResturantService>();
+            services.AddScoped<IInventoryItemService, InventoryItemService>();
 
             return services;
         }

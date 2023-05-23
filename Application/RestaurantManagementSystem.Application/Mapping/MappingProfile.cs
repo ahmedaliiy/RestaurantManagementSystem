@@ -9,6 +9,7 @@ namespace RestaurantManagementSystem.Application.Mapping
         public MappingProfile()
         {
             CreateMap<Restaurant, RestaurantDto>().ReverseMap();
+            CreateMap<InventoryItem, InventoryItemDto>().ReverseMap();
         }
     }
 }
