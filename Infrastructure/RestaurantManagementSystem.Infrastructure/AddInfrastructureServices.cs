@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestaurantManagementSystem.Application.Contracts.Infrastructure;
@@ -22,10 +21,12 @@ namespace RestaurantManagementSystem.Infrastructure
             services.AddScoped<IResturantRepository, ResturantRepository>();
             services.AddScoped<IInventoryItemRepository, InventoryItemRepository>();
             services.AddScoped<IMenuItemRepository, MenuItemRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             
             services.AddScoped<IResturantService, ResturantService>();
             services.AddScoped<IInventoryItemService, InventoryItemService>();
             services.AddScoped<IMenuItemService, MenuItemService>();
+            services.AddScoped<IOrderService, OrderService>();
 
             return services;
         }
