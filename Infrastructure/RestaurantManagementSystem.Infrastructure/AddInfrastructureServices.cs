@@ -21,9 +21,11 @@ namespace RestaurantManagementSystem.Infrastructure
 
             services.AddScoped<IResturantRepository, ResturantRepository>();
             services.AddScoped<IInventoryItemRepository, InventoryItemRepository>();
+            services.AddScoped<IMenuItemRepository, MenuItemRepository>();
             
             services.AddScoped<IResturantService, ResturantService>();
             services.AddScoped<IInventoryItemService, InventoryItemService>();
+            services.AddScoped<IMenuItemService, MenuItemService>();
 
             return services;
         }

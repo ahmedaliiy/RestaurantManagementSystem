@@ -10,6 +10,7 @@ namespace RestaurantManagementSystem.Application.Mapping
         {
             CreateMap<Restaurant, RestaurantDto>().ReverseMap();
             CreateMap<InventoryItem, InventoryItemDto>().ReverseMap();
+            CreateMap<MenuItem, MenuItemDto>().ReverseMap();
         }
     }
 }
